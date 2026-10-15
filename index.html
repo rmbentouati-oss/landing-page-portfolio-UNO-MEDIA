@@ -16,6 +16,70 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Floating contact buttons: Instagram + WhatsApp */
+        .floating-contact {
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+            z-index: 9999;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            direction: ltr;
+        }
+        .floating-contact a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            min-width: 145px;
+            padding: 12px 16px;
+            border-radius: 999px;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+            font-weight: 700;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .floating-contact a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 28px rgba(0, 0, 0, .24);
+        }
+        .floating-contact a:focus-visible {
+            outline: 3px solid #fff;
+            outline-offset: 3px;
+        }
+        .floating-contact svg {
+            width: 21px;
+            height: 21px;
+            flex: 0 0 21px;
+        }
+        .floating-contact .contact-instagram {
+            background: linear-gradient(45deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+        }
+        .floating-contact .contact-whatsapp {
+            background: #25D366;
+        }
+        @media (max-width: 480px) {
+            .floating-contact {
+                left: 12px;
+                bottom: 12px;
+                gap: 8px;
+            }
+            .floating-contact a {
+                min-width: 0;
+                padding: 11px;
+            }
+            .floating-contact .contact-label {
+                display: none;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
@@ -178,7 +242,7 @@
         </div>
 
         <div class="services-grid">
-            <article class="service-card reveal">
+<article class="service-card reveal">
                 <div class="service-top">
                     <span class="service-num">01</span>
                     <span class="service-icon icon-purple" aria-hidden="true">
@@ -189,15 +253,16 @@
                 <span class="service-en">Individual Consulting</span>
                 <p class="service-location">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                    حضورية — بومرداس
+                    أونلاين — متاح للجميع
                 </p>
-                <p>استشارات فردية مخصصة لصنّاع المحتوى وأصحاب المشاريع والعلامات التجارية، لتحليل وضعك الحالي وتوجيهك عملياً نحو استراتيجية محتوى تناسبك.</p>
+                <p class="service-note">يمكن الحضور حضورياً في بومرداس عند الحاجة</p>
+                <p>استشارات فردية أونلاين مخصصة لصنّاع المحتوى وأصحاب المشاريع والعلامات التجارية، لتحليل وضعك الحالي وتوجيهك عملياً نحو استراتيجية محتوى تناسبك.</p>
                 <ul class="service-list">
                     <li><span aria-hidden="true">✓</span> تحليل الوضع الحالي</li>
                     <li><span aria-hidden="true">✓</span> توجيه عملي</li>
                     <li><span aria-hidden="true">✓</span> استراتيجية محتوى مناسبة</li>
                 </ul>
-                <a href="#contact" class="btn btn-primary btn-block">احجز استشارتك</a>
+                <a href="https://forms.gle/ZCaUr9hDJE9YRrTv7" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">احجز استشارتك</a>
             </article>
 
             <article class="service-card featured reveal" style="--d:.1s">
@@ -220,7 +285,7 @@
                     <li><span aria-hidden="true">✓</span> بناء الحضور وتحليل النتائج</li>
                     <li><span aria-hidden="true">✓</span> النمو على Instagram وTikTok</li>
                 </ul>
-                <a href="#courses" class="btn btn-dark btn-block">اكتشف الدورة</a>
+                <a href="https://forms.gle/tNYTRVXEaSBU2bDB9" target="_blank" rel="noopener noreferrer" class="btn btn-dark btn-block">سجّل في الدورة</a>
             </article>
 
             <article class="service-card reveal" style="--d:.2s">
@@ -458,55 +523,6 @@
     </div>
 </section>
 
-<!-- ==================== SOCIAL MEDIA / CONTACT ==================== -->
-<section class="section social" id="contact">
-    <div class="container">
-        <div class="section-head">
-            <span class="section-tag reveal">Social Media</span>
-            <h2 class="section-title reveal" style="--d:.1s">تابع UNO MEDIA</h2>
-            <p class="section-desc reveal" style="--d:.2s">تابعنا على منصات التواصل الاجتماعي وكن أول من يعرف جديدنا — روابطنا كلها في مكان واحد.</p>
-        </div>
-
-        <div class="social-grid">
-            <a class="social-card instagram reveal" data-social="instagram">
-                <span class="social-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.6" y2="6.5"/></svg>
-                </span>
-                <strong>Instagram</strong>
-                <span class="social-follow">تابعنا الآن</span>
-            </a>
-            <a class="social-card tiktok reveal" style="--d:.1s" data-social="tiktok">
-                <span class="social-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4c1.5.5 3 1.5 4 3"/></svg>
-                </span>
-                <strong>TikTok</strong>
-                <span class="social-follow">تابعنا الآن</span>
-            </a>
-            <a class="social-card facebook reveal" style="--d:.2s" data-social="facebook">
-                <span class="social-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                </span>
-                <strong>Facebook</strong>
-                <span class="social-follow">تابعنا الآن</span>
-            </a>
-            <a class="social-card linkedin reveal" style="--d:.3s" data-social="linkedin">
-                <span class="social-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                </span>
-                <strong>LinkedIn</strong>
-                <span class="social-follow">تابعنا الآن</span>
-            </a>
-            <a class="social-card youtube reveal" style="--d:.4s" data-social="youtube">
-                <span class="social-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-                </span>
-                <strong>YouTube</strong>
-                <span class="social-follow">تابعنا الآن</span>
-            </a>
-        </div>
-    </div>
-</section>
-
 <!-- ==================== FOOTER ==================== -->
 <footer class="footer">
     <div class="container">
@@ -520,21 +536,7 @@
                 </a>
                 <p>شركة متخصصة في صناعة المحتوى والتسويق الرقمي — نساعدك على بناء حضور رقمي قوي وتحقيق نمو مستدام.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-mini" data-social="instagram" aria-label="Instagram">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
-                    </a>
-                    <a href="#" class="social-mini" data-social="tiktok" aria-label="TikTok">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12a4 4 0 1 0 4 4V4c1.5.5 3 1.5 4 3"/></svg>
-                    </a>
-                    <a href="#" class="social-mini" data-social="facebook" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-                    </a>
-                    <a href="#" class="social-mini" data-social="linkedin" aria-label="LinkedIn">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4V9h4v1.5A6 6 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-                    </a>
-                    <a href="#" class="social-mini" data-social="youtube" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
-                    </a>
+                    
                 </div>
             </div>
 
@@ -586,5 +588,32 @@
 </button>
 
 <script src="main.js"></script>
+
+<!-- Floating contact buttons: Instagram + WhatsApp -->
+<div class="floating-contact" aria-label="روابط التواصل">
+    <a class="contact-instagram"
+       href="https://www.instagram.com/uno.media.dz?mdxt=eG4yc2Fzc3I1bGV3"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="تواصل معنا عبر Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+            <circle cx="12" cy="12" r="4"></circle>
+            <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"></circle>
+        </svg>
+        <span class="contact-label">Instagram</span>
+    </a>
+    <a class="contact-whatsapp"
+       href="https://wa.me/message/PTR4N4WB5QLFB1"
+       target="_blank" rel="noopener noreferrer"
+       aria-label="تواصل معنا عبر WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M20.52 3.48A11.8 11.8 0 0 0 12.13 0C5.6 0 .28 5.32.28 11.85c0 2.09.55 4.13 1.59 5.93L.18 24l6.37-1.67a11.8 11.8 0 0 0 5.58 1.42h.01c6.53 0 11.85-5.32 11.85-11.85 0-3.17-1.23-6.15-3.47-8.42ZM12.14 21.7h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.78.99 1.01-3.69-.23-.38a9.78 9.78 0 0 1-1.5-5.19c0-5.41 4.4-9.81 9.82-9.81a9.75 9.75 0 0 1 6.95 2.88 9.75 9.75 0 0 1 2.87 6.96c0 5.41-4.4 9.82-9.78 9.82Zm5.39-7.35c-.29-.15-1.72-.85-1.99-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.14-.17.2-.34.22-.63.08-.29-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.73-1.63-2.02-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.51-.07-.15-.66-1.59-.9-2.18-.24-.57-.48-.49-.66-.5h-.56c-.2 0-.51.07-.78.37-.27.29-1.02 1-1.02 2.43s1.05 2.82 1.19 3.01c.15.2 2.06 3.15 4.99 4.42.7.3 1.24.49 1.66.62.7.22 1.34.19 1.84.12.56-.08 1.72-.7 1.97-1.39.24-.68.24-1.27.17-1.39-.07-.12-.27-.2-.56-.34Z"></path>
+        </svg>
+        <span class="contact-label">WhatsApp</span>
+    </a>
+</div>
+
 </body>
 </html>
